@@ -1,8 +1,8 @@
 # LogiMinder Timesheet PDF
 
-![Exemple de Feuille de Temps](example.jpg)
+LogiMinder Timesheet PDF est une API pour générer des feuilles de temps au format PDF à partir de données JSON. Elle est utile pour les consultants, managers et entreprises souhaitant automatiser et simplifier la création de rapports de temps.
 
-LogiMinder Timesheet PDF est une application API innovante pour générer des feuilles de temps au format PDF à partir de données JSON structurées. Elle est idéale pour les consultants, managers et entreprises souhaitant automatiser et simplifier la création de rapports de temps.
+![Exemple de Feuille de Temps](example.jpg)
 
 ## Fonctionnalités principales
 
