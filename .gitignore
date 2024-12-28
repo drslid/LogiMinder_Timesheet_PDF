@@ -1,0 +1,17 @@
+# Node.js modules
+node_modules/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# Fichiers de données ou sensibles
+data.json
+
+# Système d'exploitation
+.DS_Store
+Thumbs.db
+
+# Dépendances
+package-lock.json
