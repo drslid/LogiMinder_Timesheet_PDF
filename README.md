@@ -14,24 +14,25 @@
 
 ## 📖 Table of Contents
 
--   [✨ Key Features](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#key-features)
--   [🛠️ Prerequisites](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#prerequisites)
--   [📋 Getting Started](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#getting-started)
-    -   [Clone the Repository](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#clone-the-repository)
-    -   [Install Dependencies](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#install-dependencies)
-    -   [Run Locally with Node.js](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#run-locally-with-nodejs)
-    -   [Run with Docker](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#run-with-docker)
-    -   [Run with Docker Compose](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#run-with-docker-compose)
--   [📡 API Usage](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#api-usage)
-    -   [Endpoint](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#endpoint)
-    -   [Payload Structure](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#payload-structure)
-    -   [Example Request](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#example-request)
-    -   [Field Notes](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#field-notes)
-    -   [JSON Validation](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#json-validation)
--   [📄 PDF Structure](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#pdf-structure)
--   [🤝 Contributing](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#contributing)
--   [👥 Contributors](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#contributors)
--   [📜 License](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#license)
+- [✨ Key Features](#-key-features)  
+- [🛠️ Prerequisites](#prerequisites)  
+- [📋 Getting Started](#getting-started)
+  - [Clone the Repository](#clone-the-repository)  
+  - [Install Dependencies](#install-dependencies)  
+  - [Run Locally with Node.js](#run-locally-with-nodejs)  
+  - [Run with Docker](#run-with-docker)  
+  - [Run with Docker Compose](#run-with-docker-compose)  
+- [📡 API Usage](#api-usage)
+  - [Endpoint](#endpoint)  
+  - [Payload Structure](#payload-structure)  
+  - [Example Request](#example-request)  
+  - [Field Notes](#field-notes)  
+  - [JSON Validation](#json-validation)  
+- [📄 PDF Structure](#pdf-structure)  
+- [🤝 Contributing](#contributing)  
+- [👥 Contributors](#contributors)  
+- [📜 License](#license)
+
 
 ## ✨ Key Features
 
@@ -243,17 +244,17 @@ Contributions are welcome! Here's how you can help:
     -   Push to your fork: `git push origin feature/your-feature`.
     -   Open a pull request.
 
-Please follow the [Code of Conduct](https://grok.com/chat/CODE_OF_CONDUCT.md) and ensure your code is well-documented.
-
 ## 👥 Contributors
 
- [![Contributors](https://contrib.rocks/image?repo=drslid/LogiMinder_Timesheet_PDF)](https://github.com/drslid/LogiMinder_Timesheet_PDF/graphs/contributors) 
+<a href="https://github.com/drslid/EvPortal/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=drslid/EvPortal" alt="EvPortal Contributors"/>
+</a>
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the [LICENSE](https://grok.com/chat/LICENSE) file for details.
+This project is licensed under the MIT License. 
 
-[⬆️ Back to top](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#top)
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
 
 ----------
 
