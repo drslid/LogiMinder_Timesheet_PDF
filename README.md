@@ -1,236 +1,260 @@
-<a name="top"></a>
 
-<p align="center">
-    <a href="https://github.com/drslid/LogiMinder_Timesheet_PDF/graphs/contributors">
-        <img src="https://img.shields.io/github/contributors/drslid/LogiMinder_Timesheet_PDF.svg?style=for-the-badge" alt="Contributors">
-    </a>
-    <a href="https://github.com/drslid/EvPortal/stargazers">
-        <img src="https://img.shields.io/github/stars/drslid/LogiMinder_Timesheet_PDF.svg?style=for-the-badge" alt="Stargazers">
-    </a>
-    <a href="https://github.com/drslid/EvPortal/network/members">
-        <img src="https://img.shields.io/github/forks/drslid/LogiMinder_Timesheet_PDF.svg?style=for-the-badge" alt="Forks">
-    </a>
-    <a href="https://github.com/drslid/EvPortal/issues">
-        <img src="https://img.shields.io/github/issues/drslid/LogiMinder_Timesheet_PDF.svg?style=for-the-badge" alt="Issues">
-    </a>
-</p>
+ [![Contributors](https://img.shields.io/github/contributors/drslid/LogiMinder_Timesheet_PDF.svg?style=for-the-badge)](https://github.com/drslid/LogiMinder_Timesheet_PDF/graphs/contributors) [ ![Stargazers](https://img.shields.io/github/stars/drslid/LogiMinder_Timesheet_PDF.svg?style=for-the-badge) ](https://github.com/drslid/LogiMinder_Timesheet_PDF/stargazers) [ ![Forks](https://img.shields.io/github/forks/drslid/LogiMinder_Timesheet_PDF.svg?style=for-the-badge) ](https://github.com/drslid/LogiMinder_Timesheet_PDF/network/members) [![Issues](https://img.shields.io/github/issues/drslid/LogiMinder_Timesheet_PDF.svg?style=for-the-badge)](https://github.com/drslid/LogiMinder_Timesheet_PDF/issues) 
 
-<h1 align="center">📑 LogiMinder Timesheet PDF 🗓️  </h1>
+# 📑 LogiMinder Timesheet PDF 🗓️
 
-<p align="center">
-  <b>LogiMinder Timesheet PDF</b> is a lightweight and powerful API for generating professional timesheet documents in PDF format from structured JSON data. It supports multiple languages, strict validation, and advanced customization options.
-</p>
+**LogiMinder Timesheet PDF** is a lightweight Node.js API for generating professional timesheet PDFs from structured JSON data. It supports multiple languages, strict schema validation, and customizable layouts.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">
-  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js">
-  <img src="https://img.shields.io/badge/PDFKit-0277BD?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="PDFKit">
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-</p>
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) ![pdfmake](https://img.shields.io/badge/pdfmake-0277BD?style=for-the-badge&logo=adobeacrobatreader&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 <p align="center">
   <img src="example.jpg" alt="Sample Timesheet PDF" width="500">
 </p>
 
 
+## 📖 Table of Contents
 
-## 📖 Table of Contents  
-- [✨ Key Features](#-key-features)  
-- [📋 How to Use](#-how-to-use)  
-  - [🧰 Prerequisites](#prerequisites)  
-  - [📥 Clone the Repository](#clone-the-repository)  
-  - [📡 API Overview](#api-overview)  
-  - [📬 API Usage](#api-usage)  
-  - [🧾 Field Notes](#field-notes)  
-  - [✅ JSON Validation](#json-validation)  
-  - [🧠 Notes](#notes)  
-- [🚀 Deployment](#-deployment)  
-  - [🟢 Run with Node.js](#run-with-nodejs)  
-  - [🐳 Run with Docker](#run-with-docker)  
-  - [🧩 Run with Docker Compose](#run-with-docker-compose)  
-- [🤝 Contributing](#-contributing)  
-- [👥 Contributors](#-contributors)  
-
+-   [✨ Key Features](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#key-features)
+-   [🛠️ Prerequisites](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#prerequisites)
+-   [📋 Getting Started](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#getting-started)
+    -   [Clone the Repository](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#clone-the-repository)
+    -   [Install Dependencies](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#install-dependencies)
+    -   [Run Locally with Node.js](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#run-locally-with-nodejs)
+    -   [Run with Docker](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#run-with-docker)
+    -   [Run with Docker Compose](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#run-with-docker-compose)
+-   [📡 API Usage](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#api-usage)
+    -   [Endpoint](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#endpoint)
+    -   [Payload Structure](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#payload-structure)
+    -   [Example Request](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#example-request)
+    -   [Field Notes](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#field-notes)
+    -   [JSON Validation](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#json-validation)
+-   [📄 PDF Structure](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#pdf-structure)
+-   [🤝 Contributing](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#contributing)
+-   [👥 Contributors](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#contributors)
+-   [📜 License](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#license)
 
 ## ✨ Key Features
 
-- 📄 **PDF Generation** – Automatically creates polished timesheet documents with logo, mission, client, consultant, and detailed tables.
-- 🧪 **Strict JSON Validation** – Ensures complete and consistent data input.
-- 🌍 **Multilingual Support** – Supports several languages (EN, FR, ES, DE, IT, PT, AR).
-- 🧩 **Customization** – Supports logos (base64), custom headers, comments, summaries, and more.
-- 📊 **Time Summary** – Includes daily and total summaries for work, holidays, absences, etc.
+-   📄 **Dynamic PDF Generation**: Creates professional timesheet PDFs with consultant info, client details, daily time tracking, and validation sections.
+-   🌍 **Multilingual Support**: Supports English (`en`), French (`fr`), Spanish (`es`), Portuguese (`pt`), German (`de`), Italian (`it`), and Arabic (`ar`).
+-   🧪 **Strict JSON Validation**: Uses AJV to enforce a robust schema for consistent input data.
+-   🖼️ **Customizable Logo**: Supports base64-encoded images (JPEG, PNG, GIF) for branding.
+-   📊 **Time Tracking**: Tracks mission, leaves, sick leave, and other activities with daily and total summaries.
+-   🐳 **Docker Support**: Easy deployment with Docker and Docker Compose.
+-   🎨 **Styled Layout**: Color-coded headers, weekends, and totals for improved readability.
 
-## 📋 **How to Use**
+## 🛠️ Prerequisites
 
+-   **Node.js** (v16 or newer) for local development.
+-   **Docker** (optional) for containerized deployment.
+-   **Fonts**: Ensure `Roboto` and `Amiri` fonts are available in the `fonts/` directory (included in the repository).
+-   **Git** to clone the repository.
 
-### Prerequisites
-You can run the project either locally with Node.js or in a container with Docker:
-- Node.js (v16 or newer) — if running locally
-- Docker — if running in a container (alternative to Node.js)
+## 📋 Getting Started
 
 ### Clone the Repository
+
 ```bash
 git clone https://github.com/drslid/LogiMinder_Timesheet_PDF.git
 cd LogiMinder_Timesheet_PDF
+
 ```
 
-### API Overview
+### Install Dependencies
 
-- **Endpoint**: `POST /generate-pdf`
-- **Content-Type**: `application/json`
-- **Response**: Binary PDF file (`application/pdf`)
+```bash
+npm install
 
-The API expects a structured JSON payload containing metadata (language, month, year), consultant/client information, a table structure, and optional comments.
+```
 
-### API Usage
-#### Example request for PDF generation, using `curl` :
+### Run Locally with Node.js
+
+```bash
+node server.js
+
+```
+
+The API will be available at `http://localhost:3000`.
+
+### Run with Docker
+
+1.  Build the Docker image:
+    
+    ```bash
+    docker build -t logiminder-timesheet .
+    
+    ```
+    
+2.  Run the container:
+    
+    ```bash
+    docker run -p 3000:3000 logiminder-timesheet
+    
+    ```
+    
+3.  Access the API at `http://localhost:3000`.
+
+### Run with Docker Compose
+
+```bash
+docker-compose up --build
+
+```
+
+The API will be available at `http://localhost:3000`.
+
+## 📡 API Usage
+
+### Endpoint
+
+-   **Method**: `POST /generate-pdf`
+-   **Content-Type**: `application/json`
+-   **Response**: Binary PDF file (`application/pdf`)
+
+### Payload Structure
+
+The API expects a JSON payload with the following structure:
+
+```json
+{
+  "language": "string",
+  "callData": {
+    "logo": "string",
+    "date": "string",
+    "consultant": {
+      "name": "string",
+      "firstName": "string",
+      "email": "string",
+      "phone": "string",
+      "identifier": "string"
+    },
+    "client": "string",
+    "mission": "string",
+    "table": {
+      "mission": ["string"],
+      "leaves": ["string"],
+      "sickLeave": ["string"],
+      "others": ["string"]
+    },
+    "comments": "string",
+    "validations": {
+      "employee": {
+        "name": "string",
+        "validationDate": "string",
+        "method": "string",
+        "token": "string"
+      },
+      "approver": {
+        "name": "string",
+        "validationDate": "string",
+        "method": "string",
+        "token": "string"
+      }
+    }
+  }
+}
+
+```
+
+### Example Request
+
 ```bash
 curl -X POST http://localhost:3000/generate-pdf \
   -H "Content-Type: application/json" \
   -d '{
-    "language": "fr",
+    "language": "en",
     "callData": {
-      "logo": "data:image/jpeg;base64,****",
-      "month": "Décembre",
-      "year": "2023",
+      "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAIAAAC1nk4lAAAAgElEQVR4nOzQMQ3CYBhFUUJ+AyjABgMzCwsWEFhdXSuhKr6bNDlHwMvNW5/3/TbjeP2HlqeKR4muiK6IroiuiK6IroiuiK6IroiuiK6IroiuiK6s7/4Ymv49t6HlSz4tuiK6IroiuiK6IroiuiK6IroiuiK6IroiuiK6cgYAAP//ImUE6VlfCnoAAAAASUVORK5CYII=",
+      "date": "05/2025",
       "consultant": {
-        "name": "Dupont",
-        "firstName": "Jean",
-        "email": "jean.dupont@example.com",
-        "phone": "0123456789",
-        "identifier": "12345"
+        "name": "Smith",
+        "firstName": "Alex",
+        "email": "alex.smith@example.com",
+        "phone": "+15551234567",
+        "identifier": "12365465465445"
       },
-      "client": "Client XYZ",
-      "mission": "Projet ABC",
+      "client": "Acme Industries",
+      "mission": "Full-Stack Dev",
       "table": {
-        "header": ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim", "Lun", "Mar", "Mer"],
-        "dates": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"],
-        "mission": ["1", "0.5", "1", "0.5", "1", "0", "0", "1", "0.5", "1", "0.5", "1", "0", "0", "1", "0.5", "1", "0.5", "1", "0", "0", "1", "0.5", "1", "0.5", "1", "0", "0", "1", "0.5", "1"],
-        "holidays": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
-        "leaves": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
-        "sickLeave": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
-        "others": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
-        "total": ["1", "0.5", "1", "0.5", "1", "0", "0", "1", "0.5", "1", "0.5", "1", "0", "0", "1", "0.5", "1", "0.5", "1", "0", "0", "1", "0.5", "1", "0.5", "1", "0", "0", "1", "0.5", "1"]
+        "mission": ["2:0"],
+        "leaves": ["2:1"],
+        "sickLeave": [],
+        "others": []
       },
-      "totals": {
-        "header": "Total",
-        "values": ["15.5", "0", "0", "0", "0", "15.5"]
-      },
-      "comments": "Aucun commentaire.",
+      "comments": "Project on track.",
       "validations": {
         "employee": {
-          "name": "Jean Dupont",
-          "validationDate": "2023-12-31",
+          "name": "Alex Smith",
+          "validationDate": "2025-05-31",
           "method": "Email",
           "token": "123456"
         },
         "approver": {
-          "name": "Manager XYZ",
-          "validationDate": "2023-12-31",
+          "name": "Jordan Lee",
+          "validationDate": "2025-05-31",
           "method": "Email",
           "token": "654321"
         }
       }
     }
-  }'
+  }' > timesheet.pdf
+
 ```
+
 ### Field Notes
 
-- **`language`**: Document language. Must be one of the supported codes:
-  - `fr`: French  
-  - `en`: English  
-  - `es`: Spanish  
-  - `pt`: Portuguese  
-  - `de`: German  
-  - `it`: Italian  
-  - `ar`: Arabic  
-- **`logo`**: Logo image in base64 format. Use a tool like [Base64-Image](https://www.base64-image.de/) to convert your files.
-- **`month` and `year`**: Month and year of the report (e.g., "December", "2023").
-- **`consultant`**: Consultant information (name, first name, email, phone, and identifier).
-- **`client`**: Client name.
-- **`mission`**: Project or mission name.
-- **`table`**: Tabular data (headers, dates, values per day).
-- **`totals`**: Summary of totals.
-- **`comments`**: Additional comments.
-- **`validations`**: Information about validations made by the consultant and the approver.
+-   **`language`**: Must be one of `en`, `fr`, `es`, `pt`, `de`, `it`, `ar`.
+-   **`logo`**: Base64-encoded image (JPEG, PNG, or GIF). Use tools like [Base64-Image](https://www.base64-image.de/) to convert images.
+-   **`date`**: Format `MM/YYYY` (e.g., `05/2025`).
+-   **`consultant`**: Required fields: `name`, `firstName`, `email`. Optional: `phone`, `identifier`.
+-   **`client`**: Client name (max 100 characters).
+-   **`mission`**: Project or mission name (max 100 characters).
+-   **`table`**: Arrays of day pointers in format `DAY:VALUE` (e.g., `2:0.5`):
+    -   `mission`: Values `0`, `0.5`, `1`.
+    -   `leaves`, `sickLeave`, `others`: Values `0.5`, `1`.
+-   **`comments`**: Optional comments (max 1000 characters).
+-   **`validations`**: Employee and approver details, including `name`, `validationDate` (YYYY-MM-DD), `method` (Email, SMS, Other), and `token`.
 
 ### JSON Validation
 
-All incoming data is validated against a well-defined schema (`schema.js`). If the structure is invalid, the API will return an error with details. This ensures consistent and predictable PDF output.
+The API uses AJV to validate incoming JSON against a schema (`schema.js`). Invalid payloads return a `400` error with detailed validation errors, ensuring consistent PDF output.
 
-### Notes
+## 📄 PDF Structure
 
-- The logo must be provided as a **base64-encoded** image (PNG or JPEG).
-- The API returns the PDF directly in the response body.
-- You can fully customize the layout by editing the EJS template (`template.ejs`).
+The generated PDF includes:
 
-## 🚀 Deployment
-
-### Run with Node.js  ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-
-#### 1. Install the dependencies :
-   ```bash
-   npm install
-   ```
-#### 2. Start the server :
-   ```bash
-   node server.js
-   ```
-#### 3. Access the API at `http://localhost:3000`.
-
-### Run with Docker ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-
-#### 1. Build the Docker image :
-   ```bash
-   docker build -t logiminder-timesheet .
-   ```
-#### 2. Run the container :
-   ```bash
-   docker run -p 3000:3000 logiminder-timesheet
-   ```
-#### 3. Access the API at `http://localhost:3000`.
-
-
-### Run with Docker Compose ![Docker Compose](https://img.shields.io/badge/Docker--Compose-blue?style=flat-square&logo=docker&logoColor=white)
-#### 1. Start the application with :
-   ```bash
-   docker build -t logiminder-timesheet .
-   ```
-#### 2. Access the API at `http://localhost:3000`.
+-   **Header**: Logo (top-left), title with month and year (center).
+-   **Consultant Info**: Name, first name, email, phone, identifier (left).
+-   **Client Info**: Client name, mission (right).
+-   **Table**: Displays days of the month, with rows for mission, leaves, sick leave, others, and daily totals. Weekends are highlighted.
+-   **Comments**: Optional section with user-provided comments.
+-   **Validation**: Employee and approver details (name, date, method, token).
+-   **Footer**: "LogiMinder" branding.
 
 ## 🤝 Contributing
 
-I appreciate and encourage community contributions! If you'd like to help improve this project, here’s how you can get involved. 
+Contributions are welcome! Here's how you can help:
 
-### 🚀 How You Can Contribute
+1.  **Report Issues**: Open an issue for bugs or suggestions.
+2.  **Submit Pull Requests**:
+    -   Fork the repository.
+    -   Create a branch: `git checkout -b feature/your-feature`.
+    -   Commit changes: `git commit -m "Add your feature"`.
+    -   Push to your fork: `git push origin feature/your-feature`.
+    -   Open a pull request.
 
-- 🐛 **Report Issues:** Found a bug or an issue? Open a new issue in our GitHub repository.  
-- 💡 **Suggest Features:** Have an idea for improvement? Share it by opening an issue.  
-- 🛠️ **Contribute Code:** Fork the repository, make changes, and submit a pull request to help enhance the project.  
+Please follow the [Code of Conduct](https://grok.com/chat/CODE_OF_CONDUCT.md) and ensure your code is well-documented.
 
-### 📌 Contribution Guide
+## 👥 Contributors
 
-1. **Fork** the repository.  
-2. **Create a new branch** for your feature or bug fix :  
-   ```bash
-   git checkout -b my-feature-branch
-   ```
-2. **Make changes** and commit them with a clear message :  
-   ```bash
-   git commit -am "Add my new feature"
-   ```
-2. **Push your branch** to your forked repository :  
-   ```bash
-   git push origin my-feature-branch
-   ```
-5. **Open a pull request** to the main repository, describing your changes and why they should be merged.
+ [![Contributors](https://contrib.rocks/image?repo=drslid/LogiMinder_Timesheet_PDF)](https://github.com/drslid/LogiMinder_Timesheet_PDF/graphs/contributors) 
 
-## 👥 **Contributors**
+## 📜 License
 
-<a href="https://github.com/drslid/EvPortal/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=drslid/EvPortal" alt="EvPortal Contributors"/>
-</a>
-<p align="right"><a href="#top">⬆️ Back to top</a></p>
+This project is licensed under the MIT License. See the [LICENSE](https://grok.com/chat/LICENSE) file for details.
 
----
+[⬆️ Back to top](https://grok.com/chat/fbd499ec-ca3e-4901-9033-185ad5b6cd23#top)
+
+----------
+
 Build to automate timesheets. Generate clean, multilingual reports. 📄🌍🚀

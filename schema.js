@@ -1,30 +1,27 @@
 const { i18n } = require('./translations');
 
 function getSchema(language) {
-  const tableHeaders = Object.values(i18n[language].tableHeaders); // Récupère les en-têtes de tableau dynamiquement
+  const tableHeaders = Object.values(i18n[language].tableHeaders);
 
   return {
     type: 'object',
     properties: {
       language: { 
         type: 'string', 
-        enum: Object.keys(i18n) // Validation pour les langues supportées
+        enum: Object.keys(i18n)
       },
       callData: {
         type: 'object',
-        additionalProperties: false, // Interdit les champs non définis dans callData
+        additionalProperties: false,
         properties: {
           logo: { 
             type: 'string', 
-            pattern: '^data:image\\/(jpeg|png|gif);base64,[a-zA-Z0-9+/]+={0,2}$' // Validation pour le format base64
+            pattern: '^data:image\\/(jpeg|png|gif);base64,[a-zA-Z0-9+/]+={0,2}$',
+            maxLength: 1000000
           },
-          month: { 
+          date: { 
             type: 'string', 
-            minLength: 1 // Validation pour s'assurer que le mois n'est pas vide
-          },
-          year: { 
-            type: 'string', 
-            pattern: '^\\d{4}$' // Validation pour une année à 4 chiffres
+            pattern: '^(0[1-9]|1[0-2])\\/\\d{4}$'
           },
           consultant: {
             type: 'object',
@@ -32,26 +29,26 @@ function getSchema(language) {
               name: { 
                 type: 'string', 
                 minLength: 1, 
-                maxLength: 50 // Limite la longueur du nom
+                maxLength: 50
               },
               firstName: { 
                 type: 'string', 
                 minLength: 1, 
-                maxLength: 50 // Limite la longueur du prénom
+                maxLength: 50
               },
               email: { 
                 type: 'string', 
                 format: 'email', 
-                pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$' // Validation robuste pour l'email
+                pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'
               },
               phone: { 
                 type: 'string', 
-                pattern: '^\\d{10}$' // Validation pour un numéro de téléphone à 10 chiffres
+                pattern: '^\\+\\d{1,4}\\d{6,15}$'
               },
               identifier: { 
                 type: 'string', 
                 minLength: 1, 
-                maxLength: 20 // Limite la longueur de l'identifiant
+                maxLength: 20
               }
             },
             required: ['name', 'firstName', 'email']
@@ -59,101 +56,50 @@ function getSchema(language) {
           client: { 
             type: 'string', 
             minLength: 1, 
-            maxLength: 100 // Limite la longueur du nom du client
+            maxLength: 100
           },
           mission: { 
             type: 'string', 
             minLength: 1, 
-            maxLength: 100 // Limite la longueur de la mission
+            maxLength: 100
           },
           table: {
             type: 'object',
             properties: {
-              header: { 
-                type: 'array', 
-                items: { type: 'string' }, 
-                minItems: 1 // Validation pour s'assurer que le tableau n'est pas vide
-              },
-              dates: { 
-                type: 'array', 
-                items: { 
-                  type: 'string', 
-                  pattern: '^(|([1-9]|[12][0-9]|3[01]))$' // Validation pour "" ou "1" à "31"
-                }, 
-                minItems: 1 // Validation pour s'assurer que le tableau n'est pas vide
-              },
               mission: { 
                 type: 'array', 
                 items: { 
                   type: 'string', 
-                  pattern: '^(0|0\\.5|1)$' // Validation pour "0", "0.5" ou "1"
-                }, 
-                minItems: 1 // Validation pour s'assurer que le tableau n'est pas vide
-              },
-              holidays: { 
-                type: 'array', 
-                items: { 
-                  type: 'string', 
-                  pattern: '^(0|0\\.5|1)$' // Validation pour "0", "0.5" ou "1"
-                }, 
-                minItems: 1 // Validation pour s'assurer que le tableau n'est pas vide
+                  pattern: '^([1-9]|[12][0-9]|3[01]):(0|0\\.5|1)$' // Accepte 0, 0.5, 1
+                }
               },
               leaves: { 
                 type: 'array', 
                 items: { 
                   type: 'string', 
-                  pattern: '^(0|0\\.5|1)$' // Validation pour "0", "0.5" ou "1"
-                }, 
-                minItems: 1 // Validation pour s'assurer que le tableau n'est pas vide
+                  pattern: '^([1-9]|[12][0-9]|3[01]):(0\\.5|1)$'
+                }
               },
               sickLeave: { 
                 type: 'array', 
                 items: { 
                   type: 'string', 
-                  pattern: '^(0|0\\.5|1)$' // Validation pour "0", "0.5" ou "1"
-                }, 
-                minItems: 1 // Validation pour s'assurer que le tableau n'est pas vide
+                  pattern: '^([1-9]|[12][0-9]|3[01]):(0\\.5|1)$'
+                }
               },
               others: { 
                 type: 'array', 
                 items: { 
                   type: 'string', 
-                  pattern: '^(0|0\\.5|1)$' // Validation pour "0", "0.5" ou "1"
-                }, 
-                minItems: 1 // Validation pour s'assurer que le tableau n'est pas vide
-              },
-              total: { 
-                type: 'array', 
-                items: { 
-                  type: 'string', 
-                  pattern: '^(0|0\\.5|1)$' // Validation pour "0", "0.5" ou "1"
-                }, 
-                minItems: 1 // Validation pour s'assurer que le tableau n'est pas vide
+                  pattern: '^([1-9]|[12][0-9]|3[01]):(0\\.5|1)$'
+                }
               }
             },
-            required: ['header', 'dates', 'mission', 'holidays', 'leaves', 'sickLeave', 'others', 'total'] // Validation des propriétés requises
-          },
-          totals: {
-            type: 'object',
-            properties: {
-              header: { 
-                type: 'string', 
-                minLength: 1, 
-                maxLength: 50 // Limite la longueur de l'en-tête
-              },
-              values: { 
-                type: 'array', 
-                items: { 
-                  type: 'string'
-                }, 
-                minItems: 1 // Validation pour s'assurer que le tableau n'est pas vide
-              }
-            },
-            required: ['header', 'values']
+            required: ['mission', 'leaves', 'sickLeave', 'others'] // Retirer 'mission'
           },
           comments: { 
             type: 'string', 
-            maxLength: 1000 // Limite la longueur du commentaire
+            maxLength: 1000
           },
           validations: {
             type: 'object',
@@ -164,21 +110,21 @@ function getSchema(language) {
                   name: { 
                     type: 'string', 
                     minLength: 1, 
-                    maxLength: 100 // Limite la longueur du nom
+                    maxLength: 100
                   },
                   validationDate: { 
                     type: 'string', 
                     format: 'date', 
-                    pattern: '^\\d{4}-\\d{2}-\\d{2}$' // Validation pour le format YYYY-MM-DD
+                    pattern: '^\\d{4}-\\d{2}-\\d{2}$'
                   },
                   method: { 
                     type: 'string', 
-                    enum: ['Email', 'SMS', 'Other'] // Liste des méthodes autorisées
+                    enum: ['Email', 'SMS', 'Other']
                   },
                   token: { 
                     type: 'string', 
                     minLength: 1, 
-                    maxLength: 50 // Limite la longueur du token
+                    maxLength: 50
                   }
                 },
                 required: ['name', 'validationDate', 'method', 'token']
@@ -189,21 +135,21 @@ function getSchema(language) {
                   name: { 
                     type: 'string', 
                     minLength: 1, 
-                    maxLength: 100 // Limite la longueur du nom
+                    maxLength: 100
                   },
                   validationDate: { 
                     type: 'string', 
                     format: 'date', 
-                    pattern: '^\\d{4}-\\d{2}-\\d{2}$' // Validation pour le format YYYY-MM-DD
+                    pattern: '^\\d{4}-\\d{2}-\\d{2}$'
                   },
                   method: { 
                     type: 'string', 
-                    enum: ['Email', 'SMS', 'Other'] // Liste des méthodes autorisées
+                    enum: ['Email', 'SMS', 'Other']
                   },
                   token: { 
                     type: 'string', 
                     minLength: 1, 
-                    maxLength: 50 // Limite la longueur du token
+                    maxLength: 50
                   }
                 },
                 required: ['name', 'validationDate', 'method', 'token']
@@ -212,7 +158,7 @@ function getSchema(language) {
             required: ['employee', 'approver']
           }
         },
-        required: ['consultant', 'client', 'table']
+        required: ['consultant', 'client', 'table', 'date']
       }
     },
     required: ['language', 'callData']
