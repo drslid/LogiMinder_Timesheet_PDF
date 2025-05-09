@@ -8,7 +8,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) ![pdfmake](https://img.shields.io/badge/pdfmake-0277BD?style=for-the-badge&logo=adobeacrobatreader&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 <p align="center">
-  <img src="example.jpg" alt="Sample Timesheet PDF" width="500">
+  <img src="timesheet.jpg" alt="Sample Timesheet PDF" width="500">
 </p>
 
 
