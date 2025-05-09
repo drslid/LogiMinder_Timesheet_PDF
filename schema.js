@@ -119,7 +119,7 @@ function getSchema(language) {
                   },
                   method: { 
                     type: 'string', 
-                    enum: ['Email', 'SMS', 'Other']
+                    enum: ['Email', 'SMS', 'Platform']
                   },
                   token: { 
                     type: 'string', 
@@ -144,7 +144,7 @@ function getSchema(language) {
                   },
                   method: { 
                     type: 'string', 
-                    enum: ['Email', 'SMS', 'Other']
+                    enum: ['Email', 'SMS', 'Platform']
                   },
                   token: { 
                     type: 'string', 

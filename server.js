@@ -13,8 +13,9 @@ const CONSTANTS = {
     HEADER: '#E6F3FF',
     WEEKEND: '#F5F5F5',
     BORDER: '#4FB0C6',
-    TOTAL_BG: '#c5e8c5', 
-    TOTAL_GRAND_BG: '#ADD8E6', 
+    TOTAL_BG: '#E6F3FF', 
+    TOTAL_GRAND_BG: '#cae4fc',
+    MISSION_BG: '#82c29e',
     FOOTER: '#CCCCCC'
   },
   FONT_SIZES: {
@@ -225,7 +226,7 @@ function buildTableContent(callData, t, lang) {
   const missionRow = [
     createTableCell(t.tableHeaders.mission, { bold: true }, lang),
     ...buildTableRow(normalizedTable.mission, null, {}, lang),
-    createTotalCell(totals.values[0], { bold: true })
+    createTotalCell(totals.values[0], { bold: true, fillColor: CONSTANTS.COLORS.MISSION_BG },)
   ];
 
   const leavesRow = [
@@ -249,7 +250,7 @@ function buildTableContent(callData, t, lang) {
   const totalRow = [
     createTableCell(t.tableHeaders.total, { bold: true }, lang),
     ...buildTableRow(normalizedTable.total, null, { bold: true }, lang),
-    createTableCell(totals.values[4], { bold: true, fillColor: CONSTANTS.COLORS.TOTAL_GRAND_BG }, lang) // Bleu clair pour le total général
+    createTableCell(totals.values[4], { bold: true, fillColor: CONSTANTS.COLORS.TOTAL_GRAND_BG }, lang) 
   ];
 
   return [
@@ -432,7 +433,11 @@ function buildDocDefinition(callData, lang) {
   }
 
   // Ajouter la section de validation
-  content.push(buildValidationSection(callData, t));
+  content.push({
+    margin: [0, callData.comments?.trim() ? 0 : 15, 0, 0],
+    ...buildValidationSection(callData, t)
+  });
+
 
   return {
     pageSize: 'A4',
@@ -555,5 +560,5 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Timesheet API running on port ${PORT}`);
+  console.log(`LogiMinder Timesheet API running on port ${PORT}`);
 });
